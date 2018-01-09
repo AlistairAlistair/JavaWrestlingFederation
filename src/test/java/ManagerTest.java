@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class ManagerTest {
         private Manager paulHeyman;
         private Wrestler brockLesnar;
+        private Wrestler cmPunk;
 
     @Before
     public void before(){
@@ -17,6 +18,9 @@ public class ManagerTest {
         brockLesnar = new Wrestler("Brock Lesnar", 40, 9385, 1200000,
                 "Brock The Beast Incarnate Lesnar", "Minneapolis, Minnesota", "Heavyweight",
                 191, "F5", "Suplex City, B***h", true);
+        cmPunk = new Wrestler("Phil Brooks", 39, 2434, 1100000,
+                "CM Punk", "Chicago, Illinois", "Heavyweight",
+                188, "Go To Sleep", "I'm straight Edge, and that means I'm better than you", false);
     }
 
     @Test
@@ -58,5 +62,34 @@ public class ManagerTest {
     public void managerHasOneWrestlerInSTable(){
         paulHeyman.addWrestlerToStable(brockLesnar);
         assertEquals(1, paulHeyman.numberOfWrestlers());
+    }
+
+    @Test
+    public void removeWrestlerFromStable(){
+        paulHeyman.addWrestlerToStable(brockLesnar);
+        paulHeyman.removeWrestlerFromStable(brockLesnar);
+        assertEquals(0, paulHeyman.numberOfWrestlers());
+
+    }
+
+    @Test
+    public void managerHasTwoWrestlersInStable(){
+        paulHeyman.addWrestlerToStable(cmPunk);
+        paulHeyman.addWrestlerToStable(brockLesnar);
+        assertEquals(2, paulHeyman.numberOfWrestlers());
+    }
+
+    @Test
+    public void doesWrestlerHeelStatusChangeAdded(){
+        paulHeyman.addWrestlerToStableChangeStatus(cmPunk);
+        assertEquals(true, cmPunk.getHeelStatus());
+        assertEquals(1, paulHeyman.numberOfWrestlers());
+    }
+
+    @Test
+    public void doesWrestlerHeelStatusChangeRemoved(){
+        paulHeyman.removeWrestlerFromStableChangeStatus(brockLesnar);
+        assertEquals(false, brockLesnar.getHeelStatus());
+        assertEquals(0, paulHeyman.numberOfWrestlers());
     }
 }

@@ -22,12 +22,23 @@ public class Manager extends Performer{
         return this.wrestlers.size();
     }
 
-    public boolean stableIsEmpty(){
-        return numberOfWrestlers() == 0;
-    }
-
-
     public void addWrestlerToStable(Wrestler wrestler) {
         this.wrestlers.add(wrestler);
     }
+
+    public void addWrestlerToStableChangeStatus(Wrestler wrestler){
+        this.addWrestlerToStable(wrestler);
+        wrestler.heelStatus = this.heelStatus;
+    }
+
+    public void removeWrestlerFromStable(Wrestler wrestler) {
+        this.wrestlers.remove(wrestler);
+    }
+
+    public void removeWrestlerFromStableChangeStatus(Wrestler wrestler) {
+        this.removeWrestlerFromStable(wrestler);
+        wrestler.heelStatus = !this.heelStatus;
+    }
+
+
 }
