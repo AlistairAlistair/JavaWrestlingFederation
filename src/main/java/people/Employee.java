@@ -1,10 +1,10 @@
 package people;
 
-public class Employees extends People {
+public class Employee extends People {
     private int employeeNumber;
     private int salary;
 
-    public Employees(String name, int age, int employeeNumber, int salary) {
+    public Employee(String name, int age, int employeeNumber, int salary) {
         super(name, age);
         this.employeeNumber = employeeNumber;
         this.salary = salary;

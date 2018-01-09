@@ -1,25 +1,20 @@
 package people;
 
-import java.util.ArrayList;
-
-public class Wrestler extends Employees {
+public class Wrestler extends Performer {
     private String alias;
     private String homeTown;
-    private int weightClass;
+    private String weightClass;
     private int height;
     private String finishingMove;
-    private String catchPhrase;
-    private Boolean heelStatus;
 
-    public Wrestler(String name, int age, int employeeNumber, int salary, String alias, String homeTown, int weightClass, int height, String finishingMove, String catchPhrase, Boolean heelStatus) {
-        super(name, age, employeeNumber, salary);
+    public Wrestler(String name, int age, int employeeNumber, int salary, String alias, String homeTown, String weightClass, int height, String finishingMove, String catchPhrase, Boolean heelStatus) {
+        super(name, age, employeeNumber, salary, catchPhrase, heelStatus);
         this.alias = alias;
         this.homeTown = homeTown;
         this.weightClass = weightClass;
         this.height = height;
         this.finishingMove = finishingMove;
-        this.catchPhrase = catchPhrase;
-        this.heelStatus = heelStatus;
+
     }
 
     public String getAlias() {
@@ -38,11 +33,11 @@ public class Wrestler extends Employees {
         this.homeTown = homeTown;
     }
 
-    public int getWeightClass() {
+    public String getWeightClass() {
         return weightClass;
     }
 
-    public void setWeightClass(int weightClass) {
+    public void setWeightClass(String weightClass) {
         this.weightClass = weightClass;
     }
 

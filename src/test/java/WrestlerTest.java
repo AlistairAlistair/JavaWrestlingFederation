@@ -10,7 +10,7 @@ public class WrestlerTest {
     @Before
     public void before(){
         jakeRoberts = new Wrestler("Jake Roberts", 35, 2384, 300000,
-                "Jake The Snake Roberts", "Stone Mountain, Georgia.", 195,
+                "Jake The Snake Roberts", "Stone Mountain, Georgia.", "Heavyweight",
                 260, "DDT", "Trust Me", true);
     }
 
@@ -46,7 +46,7 @@ public class WrestlerTest {
 
     @Test
     public void wrestlerHasWeightClass(){
-        assertEquals(195, jakeRoberts.getWeightClass());
+        assertEquals("Heavyweight", jakeRoberts.getWeightClass());
     }
 
     @Test
