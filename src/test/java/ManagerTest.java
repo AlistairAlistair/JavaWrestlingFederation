@@ -45,7 +45,18 @@ public class ManagerTest {
     }
 
     @Test
-    public void manaagerHasHeelStatus(){
-        assertEquals(true, paulHeyman.heelStatus);
+    public void managerHasHeelStatus(){
+        assertEquals(true, paulHeyman.getHeelStatus());
+    }
+
+    @Test
+    public void managerHasEmptyStable(){
+        assertEquals(0, paulHeyman.numberOfWrestlers());
+    }
+
+    @Test
+    public void managerHasOneWrestlerInSTable(){
+        paulHeyman.addWrestlerToStable(brockLesnar);
+        assertEquals(1, paulHeyman.numberOfWrestlers());
     }
 }
