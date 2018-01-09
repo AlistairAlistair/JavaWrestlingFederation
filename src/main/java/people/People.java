@@ -1,8 +1,8 @@
 package people;
 
 public abstract class People {
-    private String name;
-    private int age;
+    public String name;
+    public int age;
 
     public People(String name, int age) {
         this.name = name;

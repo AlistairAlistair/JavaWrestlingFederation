@@ -1,4 +1,4 @@
 package Promotions;
 
-public class Promotions {
+public abstract class Promotions {
 }
