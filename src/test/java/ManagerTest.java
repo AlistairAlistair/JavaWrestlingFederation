@@ -14,8 +14,8 @@ public class ManagerTest {
 
     @Before
     public void before(){
-        paulHeyman = new Manager("Paul Heyman", 54, 32495, 334000, "Ladies and Gentlemen, my name is Paul Heyman", true);
-        brockLesnar = new Wrestler("Brock Lesnar", 40, 9385, 1200000,
+        paulHeyman = new Manager("Paul Heyman", 54, 32495, 334_000, "Ladies and Gentlemen, my name is Paul Heyman", true);
+        brockLesnar = new Wrestler("Brock Lesnar", 40, 9385, 1_200_000,
                 "Brock The Beast Incarnate Lesnar", "Minneapolis, Minnesota", "Heavyweight",
                 191, "F5", "Suplex City, B***h", true);
         cmPunk = new Wrestler("Phil Brooks", 39, 2434, 1100000,
